@@ -1,0 +1,25 @@
+# ============================================================
+# Smart Canteen Backend — Development Profile
+# ============================================================
+# Local development defaults. Override with environment variables
+# or create application-dev.local.yml (gitignored) for your secrets.
+# ============================================================
+
+spring:
+  data:
+    mongodb:
+      uri: ${MONGO_URL:}
+  mail:
+    # For local dev, emails will be logged instead of sent if no SMTP configured
+    host: ${SMTP_HOST:smtp.gmail.com}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USERNAME:}
+    password: ${SMTP_PASSWORD:}
+
+# Development logging
+logging:
+  level:
+    root: INFO
+    com.pratik.canteen: DEBUG
+    org.springframework.web.socket: DEBUG
+    org.springframework.security: DEBUG
